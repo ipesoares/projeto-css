@@ -18,9 +18,9 @@ function ReservationsViewModel() {
 
     // Non-editable catalog data - would come from the server
     self.availableMeals = [
-        { mealName: "Xis salada", price: 11.50 },
-        { mealName: "Cachorro quente", price: 10 },
-        { mealName: "Torrada Americana", price: 14.50 }
+        { mealName: "Calabresa", price: 11.50 },
+        { mealName: "4 queijos", price: 10 },
+        { mealName: "Peperone", price: 14.50 }
     ];    
 
     // Editable data
