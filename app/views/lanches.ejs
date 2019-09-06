@@ -21,7 +21,7 @@
 
         <h2> <span data-bind="text: seats().length"></span> Pedidos</h2><div class="nmesa"></div>
         <input data-bind="value: name" type="number" min="1" max="20"/> <span>Número da mesa</span>
-        
+
         <table class="table-responsive">
             <thead><tr>
                 <th>Pizza</th><th>Valor</th><th>
@@ -48,8 +48,9 @@
         </div>
 
         <div class="botãoConfirmar">
-        <button class=" btn bg-blue-compass rounded margem" action="/">Confirmar</button>
+        <a href="/"><button class=" btn bg-blue-compass rounded margem" onclick="alert('pedido confirmado') ">Confirmar</button></a>
         </div>
+        
 
 
 
