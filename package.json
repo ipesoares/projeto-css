@@ -1,0 +1,33 @@
+{
+  "name": "projeto-css",
+  "version": "1.0.0",
+  "description": "restaurante",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipesoares/projeto-css.git"
+  },
+  "author": "Felipe soares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ipesoares/projeto-css/issues"
+  },
+  "homepage": "https://github.com/ipesoares/projeto-css#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "faker": "^4.1.0",
+    "html": "^1.0.0",
+    "knockout": "^3.5.0",
+    "ko": "^1.0.0",
+    "path": "^0.12.7",
+    "sass": "^1.23.0-module.beta.1",
+    "vue": "^2.6.10"
+  }
+}

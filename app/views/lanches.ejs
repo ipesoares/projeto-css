@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Produtos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/materialize.css">
+<link rel="stylesheet" type="text/css" href="../css/lanches.css">
+<link rel="stylesheet" type="text/css" href="../css/produtos.css">
+<link rel="stylesheet" type="text/css" href="../css/produtos.scss">
+<link rel="stylesheet" type="text/css" href="../css/produtos.css.map">
+
+</head>
+
+<body>
+
+        <h2> <span data-bind="text: seats().length"></span> Pedidos</h2>
+
+        <table>
+            <thead><tr>
+                <th>Número da mesa</th><th>Lanche</th><th>Valor</th><th></th>
+            </tr></thead>
+            <tbody data-bind="foreach: seats">
+                <tr>
+                    <td><input data-bind="value: name" type="number" min="1" max="20"/></td>
+                    <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
+                    <td data-bind="text: formattedPrice"></td>
+                    <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+                </tr>    
+            </tbody>
+        </table>
+        
+        <button data-bind="click: addSeat">Reserve another seat</button>
+        
+        <h3 data-bind="visible: totalSurcharge() > 0">
+            Total surcharge: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
+        </h3>
+
+
+
+        <script type="text/javascript" src="../js/lanches.js"></script>
+
+</body>
+
+</html>
