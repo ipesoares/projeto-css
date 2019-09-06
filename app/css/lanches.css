@@ -15,5 +15,6 @@ select {
 .container{
     padding-left: 20px !important;
     padding-right: 20px !important;
-
+    border: outset !important;
+    background-color: white !important;
 }
