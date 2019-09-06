@@ -6,43 +6,55 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="../css/materialize.css">
 <link rel="stylesheet" type="text/css" href="../css/lanches.css">
 <link rel="stylesheet" type="text/css" href="../css/produtos.css">
 <link rel="stylesheet" type="text/css" href="../css/produtos.scss">
 <link rel="stylesheet" type="text/css" href="../css/produtos.css.map">
+<link rel="stylesheet" type="text/css" href="../css/material-icons.css">
+
 
 </head>
 
 <body>
+    <div class="container">
 
-        <h2> <span data-bind="text: seats().length"></span> Pedidos</h2>
-
-        <table>
+        <h2> <span data-bind="text: seats().length"></span> Pedidos</h2><div class="nmesa"></div>
+        <input data-bind="value: name" type="number" min="1" max="20"/> <span>Número da mesa</span>
+        
+        <table class="table-responsive">
             <thead><tr>
-                <th>Número da mesa</th><th>Lanche</th><th>Valor</th><th></th>
+                <th>Pizza</th><th>Valor</th><th>
             </tr></thead>
             <tbody data-bind="foreach: seats">
+
                 <tr>
-                    <td><input data-bind="value: name" type="number" min="1" max="20"/></td>
                     <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
                     <td data-bind="text: formattedPrice"></td>
-                    <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+                    <td><a class=" btn bg-blue-compass rounded" href="#" data-bind="click: $root.removeSeat">Remove</a></td>
                 </tr>    
             </tbody>
         </table>
-        
-        <button data-bind="click: addSeat">Reserve another seat</button>
-        
-        <h3 data-bind="visible: totalSurcharge() > 0">
-            Total surcharge: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
-        </h3>
+        <div class="add-val">
+            <div class="botao">
+                <button class=" btn bg-blue-compass rounded margem" data-bind="click: addSeat">ADD</button>
+            </div>
+            <div class="valorT">
+                <h4 data-bind="visible: totalSurcharge() > 0">
+            Valor Total: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
+                </h4>
+                
+            </div>
+        </div>
+
+        <div class="botãoConfirmar">
+        <button class=" btn bg-blue-compass rounded margem" action="/">Confirmar</button>
+        </div>
 
 
 
         <script type="text/javascript" src="../js/lanches.js"></script>
-
+</div>
 </body>
 
 </html>
