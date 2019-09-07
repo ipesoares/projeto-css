@@ -1,5 +1,4 @@
 
-// Class to represent a row in the seat reservations grid
 function SeatReservation(name, initialMeal) {
     
     var self = this;
@@ -12,31 +11,19 @@ function SeatReservation(name, initialMeal) {
     });    
 }
 
-// Overall viewmodel for this screen, along with initial state
 function ReservationsViewModel() {
     var self = this;
 
-    // Non-editable catalog data - would come from the server
     self.availableMeals = [
-        { mealName: "Calabresa", price: 11.50 },
-        { mealName: "4 queijos", price: 10 },
-        { mealName: "Peperone", price: 14.50 }
+        { mealName: "lanche + coca cola", price: 20.50 },
+        { mealName: "Xis salada + suco ", price: 10.45},
+        { mealName: "dois big x", price: 15.50 }
     ];    
-
-    self.availableDrinks = [
-        { drinkName: "Caipira", price: 15.00 },
-        { drinkName: "Cerveja", price: 12.00 },
-        { drinkName: "Vinho", price: 17.00 },
-    ];
-
-
-    // Editable data
+    
     self.seats = ko.observableArray([
         new SeatReservation("", self.availableMeals[0]),
-        // new SeatReservation("", self.availableMeals[0])
     ]);
 
-    // Computed data
     self.totalSurcharge = ko.computed(function() {
        var total = 0;
        for (var i = 0; i < self.seats().length; i++)
@@ -44,14 +31,10 @@ function ReservationsViewModel() {
        return total;
     });    
 
-
-
-    // Operations
     self.addSeat = function() {
         self.seats.push(new SeatReservation("", self.availableMeals[0]));
     }
 
-   
     self.removeSeat = function(seat) { self.seats.remove(seat) }
 }
 
