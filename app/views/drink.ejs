@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Produtos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/materialize.css">
+<link rel="stylesheet" type="text/css" href="../css/lanches.css">
+<link rel="stylesheet" type="text/css" href="../css/produtos.css">
+<link rel="stylesheet" type="text/css" href="../css/produtos.scss">
+<link rel="stylesheet" type="text/css" href="../css/produtos.css.map">
+<link rel="stylesheet" type="text/css" href="../css/material-icons.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <h2> <span data-bind="text: seats().length"></span> Pedido(s)</h2><div class="nmesa"></div>
+        <input data-bind="value: name" type="number" min="1" max="20"/> <span>Número da mesa</span>
+
+        <table class="table-responsive">
+            <thead><tr>
+                <th>Drink</th><th>Valor</th><th>
+            </tr></thead>
+            <tbody data-bind="foreach: seats">
+
+                <tr>
+                    <td><select data-bind="options: $root.availableDrinks, value: meal, optionsText: 'drinkName'"></select></td>
+                    <td data-bind="text: formattedPrice"></td>
+                    <td><a class=" btn bg-blue-compass rounded" href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+                </tr>    
+            </tbody>
+        </table>
+        <div class="add-val">
+            <div class="botao">
+                <button class=" btn bg-blue-compass rounded margem" data-bind="click: addSeat">ADD</button>
+            </div>
+            <div class="valorT">
+                <h4 data-bind="visible: totalSurcharge() > 0">
+            Valor Total: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
+                </h4>
+                
+            </div>
+        </div>
+
+        <div class="botãoConfirmar">
+        <a href="/"><button class=" btn bg-blue-compass rounded margem" onclick="alert('pedido confirmado') ">Confirmar</button></a>
+        </div>
+        
+
+
+
+        <script type="text/javascript" src="../js/knockout.js"></script>
+</div>
+</body>
+
+</html>

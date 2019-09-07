@@ -32,6 +32,10 @@ app.get('/', (req, res) => {
     res.render('lanches')
   })
 
+  app.get('/drink', (req, res) => {
+    res.render('drink')
+  })
+
 
 return app;
 }

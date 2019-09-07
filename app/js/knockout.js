@@ -23,6 +23,13 @@ function ReservationsViewModel() {
         { mealName: "Peperone", price: 14.50 }
     ];    
 
+    self.availableDrinks = [
+        { drinkName: "Caipira", price: 15.00 },
+        { drinkName: "Cerveja", price: 12.00 },
+        { drinkName: "Vinho", price: 17.00 },
+    ];
+
+
     // Editable data
     self.seats = ko.observableArray([
         new SeatReservation("", self.availableMeals[0]),
@@ -37,10 +44,14 @@ function ReservationsViewModel() {
        return total;
     });    
 
+
+
     // Operations
     self.addSeat = function() {
         self.seats.push(new SeatReservation("", self.availableMeals[0]));
     }
+
+   
     self.removeSeat = function(seat) { self.seats.remove(seat) }
 }
 
